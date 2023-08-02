@@ -16,8 +16,7 @@ export class ArticleService {
     return this.http.get<ArticlePage>('https://api.spaceflightnewsapi.net/v4/articles')
   }
 
-  getSearchedArticless():Observable<ArticlePage>{
-    return this.http.get<ArticlePage>('https://api.spaceflightnewsapi.net/v4/articles')
+  getSearchedArticless(searchReq:string):Observable<ArticlePage>{
+    return this.http.get<ArticlePage>(`https://api.spaceflightnewsapi.net/v4/articles/?search=${searchReq}`)
   }
 }
-//https://api.spaceflightnewsapi.net/v4/articles/?search=

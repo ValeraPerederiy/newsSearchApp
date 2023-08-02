@@ -3,7 +3,9 @@
         <div class="filter-input-container">
             <p class="filter-text small-bold-text">Filter by keywords</p>
             <div class="input-wrapper">
-                <input type="text" class="filter" placeholder="some text ...">
+                <form [formGroup]="searchForm">
+                    <input type="text" class="filter" placeholder="some text ..." formControlName="serachFormControl" (input)="search()">
+                </form>
                 <mat-icon aria-hidden="false" fontIcon="search"></mat-icon>
             </div>
         </div>
