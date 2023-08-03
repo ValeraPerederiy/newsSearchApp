@@ -35,27 +35,12 @@ export class HomePageComponent implements OnInit {
         this.articleService.getSearchedArticless(this.searchForm.value.serachFormControl).subscribe((searchedArticles: ArticlePage) => {
           this.latestArticless = searchedArticles.results;
 
-          // let filteredArticlesByTytle = searchedArticles.results.filter((result)=> {
-          //   result.title.includes(this.searchForm.value.serachFormControl!)
-          // })
-          
           this.latestArticless.forEach((element, i) => {
-            if(element.title.includes(this.searchForm.value.serachFormControl!)){
+            if(element.title.toLowerCase().includes(this.searchForm.value.serachFormControl!.toLowerCase())){
               this.latestArticless.splice(i, 1);
               this.latestArticless.splice(0, 0, element);
             }
           });
-          // for (let i = 0; i < searchedArticles.results.length; i++) {
-          //   if (searchedArticles.results[i].title.includes(this.searchForm.value.serachFormControl!)) {
-          //     this.latestArticless.push(searchedArticles.results[i])
-          //   }
-          // }
-          // for (let i = 0; i < searchedArticles.results.length; i++) {
-          //   if (searchedArticles.results[i].summary.includes(this.searchForm.value.serachFormControl!)) {
-          //     this.latestArticless.push(searchedArticles.results[i])
-          //   }
-          // }
-          console.log(this.latestArticless);
           
           let yellowTimeOut = setTimeout(() => {
             this.addYelowRange(this.searchForm.value.serachFormControl!)
