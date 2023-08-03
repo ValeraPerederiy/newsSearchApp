@@ -71,6 +71,10 @@
         .card-img-wrapper{
             overflow: hidden;
             height: 217px;
+            .card-img {
+                width: 100%;
+                min-height: 217px;
+            }
         }
         
         .card-text {

@@ -11,12 +11,14 @@ import { ArticlePageComponent } from './article-page/article-page.component';
 import {MatIconModule} from '@angular/material/icon';
 import { TextFormatPipe } from './pipes/text-format.pipe';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     ArticlePageComponent,
-    TextFormatPipe
+    TextFormatPipe,
+
   ],
   imports: [
     BrowserModule,
