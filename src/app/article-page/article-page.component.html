@@ -1,1 +1,17 @@
-<p>article-page works!</p>
+<div class="article-container">
+    <div class="image-wrapper">
+        <img [src]="article ? article.image_url : ''" alt="image not found...">
+    </div>
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="title-wrapper">
+                <h2 class="article-title">{{article ? article.title : 'Not found...'}}</h2>
+            </div>
+            <p class="article-text">{{article ? article.summary : 'Not found...'}}</p>
+        </div>
+        <div class="button-wrapepr">
+            <span class="small-bold-text" [routerLink]="'/home'"><mat-icon aria-hidden="false" style="font-size: 17px; width: 17px; height: 15px; color: #363636;" fontIcon="arrow_back"></mat-icon>  Back to homepage</span>
+        </div>
+    </div>
+    
+</div>
